@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+
+development:
+  <<: *default
+  database: warehouse_control_development
+  username: warehouse_admin
+  password: warehouse_pass
+  port: 5432
+
+test:
+  <<: *default
+  database: warehouse_control_test
+  username: warehouse_admin
+  password: warehouse_pass
+  port: 5432
+
+production:
+  <<: *default
+  database: warehouse_control_production
+  username: warehouse_control
+  password: <%= ENV['WAREHOUSE_CONTROL_DATABASE_PASSWORD'] %>

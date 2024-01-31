@@ -1,0 +1,34 @@
+<h1>Logs</h1>
+<%#= form_tag materials_path, method: :get do %>
+  <%#= text_field_tag :search, params[:search] %>
+  <%#= submit_tag "Search" %>
+<%# end %>
+
+<table class="table col-lg-10 offset-lg-1">
+  <thead>
+    <tr class='table-info'>
+      <th>Email do usuário</th>
+      <th>Material</th>
+      <th>Quantidade</th>
+      <th>Ação</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @material_logs.each_with_index do |material_log, i| %>
+    <% row_class = i.odd? ? 'table-primary' : 'table-secondary' %>
+      <tr class="<%= row_class %>">
+        <td><%= material_log.user.email %></td>
+        <td><%= material_log.material.name %></td>
+        <td><%= material_log.amount %></td>
+        <td><%= material_log.action_text %></td>
+        <td><%= l(material_log.created_at, format: :default)  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= paginate @material_logs %>

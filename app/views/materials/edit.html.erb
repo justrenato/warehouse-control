@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Editing Material</h1>
+          <%= render 'form', material: @material, show_quantity: false %>
+        </div>
+        <div class="card-footer text-muted">
+          <%= link_to 'Show', @material, class: 'btn btn-info me-2' %>
+          <%= link_to 'Back', materials_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

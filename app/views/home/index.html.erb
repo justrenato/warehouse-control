@@ -1,0 +1,35 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Controle interno de materiais</h1>
+      <p class="display-8 fw-bold lh-1 text-body-emphasis mb-3">A seguir está um exemplo simples de aplicação Ruby on Rails com bootstrap.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <% if !user_signed_in? %>
+        <%= form_for(@resource, as: @resource_name, url: session_path(@resource_name), html: { class: "p-4 p-md-5 border rounded-3 bg-body-tertiary" }) do |f| %>
+          <div class="form-floating mb-3">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "floatingInput", placeholder: "name@example.com" %>
+            <%= f.label :email, "Email address", for: "floatingInput" %>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+            <%= f.label :password, "Password", for: "floatingPassword" %>
+          </div>
+          <% if @devise_mapping.rememberable? %>
+            <div class="checkbox mb-3">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, "Remember me" %>
+            </div>
+          <% end %>
+          <%= f.submit "Sign in", class: "w-100 btn btn-lg btn-primary" %>
+          <hr class="my-4">
+          <small class="text-body-secondary">By clicking Sign in, you agree to the terms of use.</small>
+        <% end %>
+      <% else %>
+        <p class="col-lg-10 fs-4">Você está logado com sucesso.
+            <img src="/success_login.png" alt="Your Logo" width="60" height="60">
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

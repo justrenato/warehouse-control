@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h1 class="mb-4">New Material</h1>
+
+  <% if @material.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Os seguintes erros impediram material de ser salvo:</h4>
+      <ul>
+        <% @material.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+    <div class="card-body">
+      <%= render 'form', material: @material, show_quantity: true %>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <%= link_to 'Back', materials_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

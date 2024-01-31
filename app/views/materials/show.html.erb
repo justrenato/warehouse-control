@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      Material Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @material.name %></h5>
+      <p class="card-text">
+        <strong>Quantity:</strong>
+        <%= @material.quantity %>
+      </p>
+      <%= link_to 'Edit', edit_material_path(@material), class: 'btn btn-primary me-2' %>
+      <%= link_to 'Back', materials_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

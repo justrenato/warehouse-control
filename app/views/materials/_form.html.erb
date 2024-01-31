@@ -1,0 +1,18 @@
+<%= form_with(model: material, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <% if local_assigns[:show_quantity] %>
+    <div class="field">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, required: true %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
