@@ -23,4 +23,8 @@ Obs: Operações de adição e remoção da quantidade de materiais só podem se
 
   `$ docker-compose up`
 
+  Obs: Você pode rodar o comando a seguir se quiser gerar automaticamente materiais exemplos no banco de dados.
+
+  `$ docker-compose run --rm web rails db:seed`
+
 7. Agora você pode acessar o projeto localmente em seu navegador: [localhost:3000](http://localhost:3000).
