@@ -36,18 +36,23 @@
         <!-- Adicionar Materiais -->
         <td>
           <%= form_with url: add_materials_path(id: material.id), method: :post, local: true do |form| %>
-            <%= form.number_field :add_quantity, step: 1, min: 1, size: 10, required: true %>
-            <%= form.submit "Entrada", class: "small-button" %>
+            <%= form.number_field :add_quantity, step: 1, min: 1, class: 'input-number-field', size: 10, required: true %>
+            <%= form.submit "Add material", class: "small-button" %>
           <% end %>
         </td>
 
         <!-- Sacar Materiais -->
         <td>
           <%= form_with url: remove_materials_path(id: material.id), method: :post, local: true do |form| %>
-            <%= form.number_field :remove_quantity, in: 1..material.quantity, step: 1, min: 1, size: 10, required: true %>
-            <%= form.submit "Retirada", class: "small-button" %>
+            <%= form.number_field :remove_quantity, in: 1..material.quantity, step: 1, min: 1, class: 'input-number-field', size: 10, required: true %>
+            <%= form.submit "Remove material", class: "small-button" %>
           <% end %>
         </td>
+        <style media="screen">
+          .input-number-field {
+            width: 100px;
+          }
+        </style>
       </tr>
     <% end %>
   </tbody>

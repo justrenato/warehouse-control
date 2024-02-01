@@ -1,24 +1,26 @@
-# README
+# Projeto Warehouse Control
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+O projeto Warehouse Control é um aplicativo Rails estilizado com Bootstrap, que permite o controle de materiais em um almoxarifado. Permitindo que usuários sejam criados para que possam adicionar ou remover materiais, incrementar ou diminuir a quantidade desses materiais, e implementa também logs que registram as alterações efetuadas nos materiais.
 
-Things you may want to cover:
+Obs: Operações de adição e remoção da quantidade de materiais só podem ser executadas em dias úteis das 9h às 18h.
 
-* Ruby version
+## Requisitos Técnicos
 
-* System dependencies
+- Ruby: 2.7.4
+- Framework: Ruby on Rails 5.2.8
+- Banco de Dados: PostgreSQL
 
-* Configuration
+## Configuração e Execução Local
 
-* Database creation
+1. Certifique-se de ter as dependências básicas instaladas, incluindo o Ruby on Rails, docker e docker-compose.
+2. Navegue até o diretório do projeto e execute os comandos:
 
-* Database initialization
+  `$ docker-compose build`
 
-* How to run the test suite
+  `$ docker-compose run --rm web rails db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+  `$ docker-compose run --rm web rails db:migrate`
 
-* Deployment instructions
+  `$ docker-compose up`
 
-* ...
+7. Agora você pode acessar o projeto localmente em seu navegador: [localhost:3000](http://localhost:3000).
